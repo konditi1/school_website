@@ -222,6 +222,21 @@ section {
   color: #fff;
 }
 
+#register-error {
+  color: red;
+  font-size: 1.5rem;
+}
+
+#login-error {
+  color: red;
+  font-size: 1.5rem;
+}
+
+#successful-registration {
+  color: green;
+  font-size: 1.5rem;
+}
+
 .home {
   padding: 0;
 }
