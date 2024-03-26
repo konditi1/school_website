@@ -4,6 +4,15 @@ let navbar = document.querySelector('.header .navbar')
 document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.add('active');
 }
+let accountForm = document.querySelector('.account-form')
+
+document.querySelector('#account-btn').onclick = () =>{
+    accountForm.classList.add('active');
+}
+
+document.querySelector('#close-form').onclick = () =>{
+    accountForm.classList.remove('active');
+}
 
 
 document.querySelector('#close-navbar').onclick = () =>{
@@ -31,6 +40,7 @@ document.querySelector('#close-navbar').onclick = () =>{
   let loginBtn = document.querySelector('.account-form .login-btn');
   let registerForm = document.getElementById('register-form');
   let loginForm = document.getElementById('login-form');
+  
 
   registerBtn.onclick = () =>{
       registerBtn.classList.add('active');
@@ -67,6 +77,9 @@ document.querySelector('#close-navbar').onclick = () =>{
           })
           .then(res => {
               console.log(res)
+              if (res?.status==401) {
+                document.getElementById('register-error').innerHTML = 'Not a staff member';
+              }
             if (res?.status==400) {
               document.getElementById('register-error').innerHTML = 'User already exists';
             }        
@@ -100,33 +113,27 @@ document.querySelector('#close-navbar').onclick = () =>{
         if (res?.status==401) {
           document.getElementById('login-error').innerHTML = 'Invalid email or password';
         } else if(res?.status==200){
-          window.location.href = '/';
+          window.location.href = 'dashboard.html';
         }
     })
     .catch(err => {
         console.log(err);
     })
-  }
-    
+  } 
+  
   loginBtn.onclick = () =>{
     openLogin()
   };
+
+  
   function openLogin(){
     registerBtn.classList.remove('active');
     loginBtn.classList.add('active');
     document.querySelector('.account-form .login-form').classList.add('active');
     document.querySelector('.account-form .register-form').classList.remove('active');
   }
-
-  let accountForm = document.querySelector('.account-form')
-
-  document.querySelector('#account-btn').onclick = () =>{
-      accountForm.classList.add('active');
-  }
-
-  document.querySelector('#close-form').onclick = () =>{
-      accountForm.classList.remove('active');
-  }
+  
+  
 
 // homepage slider
 var swiper = new Swiper(".mySwiper", {
