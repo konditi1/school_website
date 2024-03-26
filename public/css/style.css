@@ -236,6 +236,15 @@ section {
   color: green;
   font-size: 1.5rem;
 }
+#student-error {
+  color: red;
+  font-size: 1.5rem;
+}
+
+#student-adm-error {
+  color: red;
+  font-size: 1.5rem;
+}
 
 .col {
   margin: 10px;

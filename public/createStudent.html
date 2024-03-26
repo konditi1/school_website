@@ -66,7 +66,8 @@
           <div class="col">
                 <form id="create-student-form">
                   <h3 class="mb-4">Register new student</h3>
-                  
+
+                  <div id="student-error"></div>
                   <div class="form-floating mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input id="name" name="name" type="text" placeholder="Enter name" class="form-control" required>
@@ -79,6 +80,7 @@
                     <label for="admNo" class="form-label">Admission No</label>
                     <input id="admNo" name="admissionNumber" type="text" placeholder="Enter admission number" class="form-control" required>
                   </div>
+                  <div id="student-adm-error"></div>
                   <div class="form-floating mb-3">
                     <label for="faculty" class="form-label">Faculty</label>
                     <input id="faculty" name="faculty" type="text" placeholder="Enter faculty" class="form-control" required>
