@@ -5,7 +5,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const Student = require('./models/Student')
-const Staff = require('./models/Staff'); 
+const Staff = require('./models/Staff');
+const sendEmailNotification = require('./public/js/emailService');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 // const isStrongPassword = require('./models/isStrongPassword');
@@ -67,6 +68,11 @@ mongoose.connect(process.env.DATABASE_URL).then(() => {
         const newUser = new User({ name: name, email: email, password: hashedPassword });
       //  return res.status(400).json({ message: `${hashedPassword}` });
           await newUser.save();
+
+          // Send welcome email notification
+          sendEmailNotification(email, 'Welcome to LAKEHEAD COLLEGE!',
+          `Thank you ${name} for registering with LAKEHEAD COLLEGE.
+          your password is ${password}`);
         res.status(201).json({ message: 'User registered successfully' });
       } else {
         return res.status(401).json({ message: 'Not a staff member' });
