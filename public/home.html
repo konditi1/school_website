@@ -41,15 +41,16 @@
     <div class="account-form">
 
         <div id="close-form" class="fas fa-times"></div>
-
+        <div id = "successful-registration"></div>
         <div class="buttons">
             <span class="btn active login-btn">Login</span>
             <span class="btn register-btn">Register</span>
         </div>
-        <form class="login-form active" action="">
-            <h3>Login now</h3>
-            <input type="email" placeholder="Enter your email" class="box">
-            <input type="password" placeholder="Enter your password" class="box">
+        <form id="login-form" class="login-form active">
+            <!-- <h3>Login now</h3> -->
+            <input name="email" type="email" placeholder="Enter your email" class="box" required>
+            <input name="password" type="password" placeholder="Enter your password" class="box" required>
+            <div id="login-error"></div>
             <div class="flex">
                 <input type="checkbox" name="" id="remember-me">
                 <label for="remember-me">Remember me</label>
@@ -58,16 +59,17 @@
             <input type="submit" value="login now" class="btn">
         </form>
 
-        <form class="register-form" action="/register" method="POST">
-            <h3>register now</h3>
-            <input name="name" type="text" placeholder="Enter your name" class="box" required>
+        <form id="register-form" class="register-form">
+            <!-- <h3>register now</h3> -->
+            <input name="name" type="text" placeholder="Enter your staff number" class="box" required>
             <input name="email" type="email" placeholder="Enter your email" class="box" required>
             <input name="password1" type="password" placeholder="Enter your password" class="box" required>
             <input name="password" type="password" placeholder="Confirm your password" class="box" required>
+            <div id ="register-error"></div>
             <input type="submit" value="Register now" class="btn">
         </form>
     </div> 
-    <!-- end sccount-form section -->
+    <!-- end account-form section -->
     <!-- end header section-->
 
     <!-- start of home section -->

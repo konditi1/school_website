@@ -15,4 +15,4 @@ const isStrongPassword = (password) => {
     );
   };
 
-  module.exports = isStrongPassword;  
+  export default isStrongPassword;  
