@@ -7,8 +7,3 @@ const staffSchema = new mongoose.Schema({
 const Staff = mongoose.model('Staff', staffSchema);
 
 module.exports = Staff;
-
-
-// const newStaff = new Staff({ staffNumber: name });
-// await newStaff.save();
-// res.status(201).json({ message: newStaff });

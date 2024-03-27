@@ -18,13 +18,13 @@
 <body>
     <!-- begin header section-->
     <header class="header">
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <i class="fas fa-lightbulb"></i> Crestview
         </a>
 
         <nav class="navbar">
             <div id="close-navbar" class="fas fa-times"></div>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="about.html">About</a>
             <a href="courses.html">Courses</a>
             <a href="contact.html">Contact</a>
@@ -46,7 +46,7 @@
             <span class="btn active login-btn">Login</span>
             <span class="btn register-btn">Register</span>
         </div>
-        <form id="login-form" class="login-form active">
+        <form id="login-form" class="login-form active" action="/login" method="POST">
             <!-- <h3>Login now</h3> -->
             <input name="email" type="email" placeholder="Enter your email" class="box" required>
             <input name="password" type="password" placeholder="Enter your password" class="box" required>
@@ -59,7 +59,7 @@
             <input type="submit" value="login now" class="btn">
         </form>
 
-        <form id="register-form" class="register-form">
+        <form id="register-form" class="register-form" action="/register" method="POST">
             <!-- <h3>register now</h3> -->
             <input name="name" type="text" placeholder="Enter your staff number" class="box" required>
             <input name="email" type="email" placeholder="Enter your email" class="box" required>

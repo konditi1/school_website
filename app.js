@@ -43,9 +43,8 @@ mongoose.connect(process.env.DATABASE_URL).then(() => {
 });
 
 // Define routes for user registration
-        app.post('/register', async (req, res) => {
-          
-      const { name, email, password } = req.body;
+app.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
     try {
       // Check if a staff member with staff number already exists
       const existingStaff = await Staff.findOne({ staffNumber: name });
