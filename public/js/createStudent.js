@@ -1,6 +1,6 @@
 
 function logout(){
-    window.location.href = '/';
+    window.location.href = '/home.html';
   };
   
   let createStudentForm = document.getElementById('create-student-form');
