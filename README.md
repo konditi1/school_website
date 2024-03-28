@@ -113,6 +113,7 @@ npm start
     * MongoDB: NoSQL database for storing school-related data.
     * Express.js: Web application framework for Node.js, facilitating backend development.
     * Node.js: JavaScript runtime environment for running server-side code.
+
 * Frontend:
     * HTML: Markup language for structuring web pages.
     * CSS & SCSS: Styling languages for designing the website layout and appearance.
@@ -122,13 +123,10 @@ npm start
 ## 🧑‍🤝‍🧑 Contributing
 
 All contributions are welcome.  
-You can find a contributing guideline [here](CONTRIBUTING.md).  
+You can find a contributing guidelines [here](CONTRIBUTING.md).  
 This project is released under the [MIT License](LICENSE).
 
 <hr>
-
-License
-This project is licensed under the MIT License.
 
 Made with 🤍 by  [Ephraim Abstaina](https://github.com/Abstaina44) and [Fena Owal](https://github.com/konditi1)
 
