@@ -33,6 +33,7 @@ The project utilises a full stack approach, incorporating both Frontend and back
 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+![SCSS](https://img.shields.io/badge/sass-%23CC6699.svg?style=for-the-badge&logo=sass&logoColor=white)
 
 [![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=for-the-badge&logo=javascript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
@@ -52,7 +53,6 @@ The project utilises a full stack approach, incorporating both Frontend and back
 
 # Table of Contents
 * Features
-* Prerequisites
 * Installation
 * Usage
 * Technologies Used
@@ -74,7 +74,9 @@ Before you begin, ensure you have met the following requirements:
 * MongoDB installed and running locally or accessible via a remote server.
 
 <hr>
-# Installation
+
+## Installation
+
 Clone the repository:
 
 *       git clone https://github.com/your-username/school-website.git
@@ -85,7 +87,8 @@ Navigate to the project directory:
 Install backend dependencies:
 *       npm install
 
-Usage
+## Usage
+
 Start the backend server:
 *       npm start
 
