@@ -72,40 +72,24 @@ Prerequisites
 Before you begin, ensure you have met the following requirements:
 * Node.js and npm installed on your local machine.
 * MongoDB installed and running locally or accessible via a remote server.
-Installation
-* 		Clone the repository:
-bash
 
+<hr>
+# Installation
+Clone the repository:
 
-git clone https://github.com/your-username/school-website.git
-* 		Navigate to the project directory:
-bash
+*       git clone https://github.com/your-username/school-website.git
 
+Navigate to the project directory:
+*       cd school-website
 
-cd school-website
-* 		Install backend dependencies:
+Install backend dependencies:
+*       npm install
 
-
-npm install
-* 		Navigate to the frontend directory:
-bash
-
-
-cd frontend
-* 		Install frontend dependencies:
-
-
-npm install
 Usage
-* 		Start the backend server:
+Start the backend server:
+*       npm start
 
-
-npm start
-* 		Start the frontend development server:
-
-
-npm start
-* 		Open your web browser and navigate to http://localhost:3000 to access the school website.
+Open your web browser and navigate to http://localhost:3000 to access the school website.
   
 # Technologies Used
 
