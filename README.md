@@ -4,7 +4,6 @@
   </a>
 </div>  
 
-
  
 <a href="#patched-fonts" title=""><img src="https://raw.githubusercontent.com/wiki/ryanoasis/nerd-fonts/images/faux-shield-badge-os-logos.svg?sanitize=true" alt="Nerd Fonts - OS Support"></a>
 
@@ -102,12 +101,12 @@ Open your web browser and navigate to http://localhost:3000 to access the school
   
 # Technologies Used
 
-* Backend:
+* Backend:👨‍💻
     * MongoDB: NoSQL database for storing school-related data.
     * Express.js: Web application framework for Node.js, facilitating backend development.
     * Node.js: JavaScript runtime environment for running server-side code.
 
-* Frontend:
+* Frontend:🧑🏼‍💻
     * HTML: Markup language for structuring web pages.
     * CSS & SCSS: Styling languages for designing the website layout and appearance.
     * Vanilla JavaScript: JavaScript framework used for frontend interactivity and dynamic content.
@@ -115,13 +114,11 @@ Open your web browser and navigate to http://localhost:3000 to access the school
 
 ## 🧑‍🤝‍🧑 Contributing
 
-All contributions are welcome.  
+All contributions are welcome.
+  
 You can find a contributing guidelines [here](CONTRIBUTING.md).  
 This project is released under the [MIT License](LICENSE).
 
 <hr>
 
-Made with 🤍 by  [Ephraim Abstaina](https://github.com/Abstaina44) and [Fena Owal](https://github.com/konditi1)
-
-
-
+Made with ❤️  by  [Ephraim Abstaina](https://github.com/Abstaina44) and [Fena Owal](https://github.com/konditi1)
