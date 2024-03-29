@@ -12,7 +12,7 @@
 
 # ALX Specialization Final Project
 
-## School Website: Full Stack Project
+## School Website: Full Stack.
 
 ## Project Description
 
@@ -41,6 +41,8 @@ The project utilises a full stack approach, incorporating both Frontend and back
 
 ## For the Back end:
 
+[![MongoDB](https://img.shields.io/badge/-MongoDB-darkgreen?style=for-the-badge&logo=mongodb&logoColor=white)]()
+
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
 
 
@@ -66,10 +68,14 @@ The project utilises a full stack approach, incorporating both Frontend and back
 * Assignment Submission: Ability for students to submit assignments electronically and receive feedback from instructors.
 * Communication Channels: Features for staff and students to communicate effectively through email, discussion forums, and messaging systems.
 * Event Management: Event calendars highlighting important dates such as exams, holidays, and school activities.
-* Online Learning: Provision of online learning resources, including course materials, quizzes, and interactive assignments.
+* Module Learning: Provision of module learning resources, including course materials, quizzes, and interactive assignments.
 * Parental Engagement: Platform for parental engagement, allowing parents to stay informed about their child's academic progress and school activities.
-Prerequisites
-Before you begin, ensure you have met the following requirements:
+
+# Prerequisites
+
+Before getting started, ensure you have the following:
+- Node.js and npm installed.
+- MongoDB installed and running locally or accessible via a remote server.
 * Node.js and npm installed on your local machine.
 * MongoDB installed and running locally or accessible via a remote server.
 
