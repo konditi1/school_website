@@ -9,6 +9,7 @@ const Staff = require('./models/Staff');
 const sendEmailNotification = require('./public/js/emailService');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const session = require('express-session');
 // const isStrongPassword = require('./models/isStrongPassword');
 const emailValidator = require('email-validator');
 
@@ -26,6 +27,13 @@ app.use(
   })
 );
 
+// configure session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+
 // Serve static files (like CSS, images, etc.)
 app.use(express.static('public'));
 
@@ -41,6 +49,10 @@ mongoose.connect(process.env.DATABASE_URL).then(() => {
 }).catch(err => {
   console.error('MongoDB connection error:', err);
   process.exit();
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/home.html'));
 });
 
 // Define routes for user registration
@@ -92,19 +104,42 @@ app.post('/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
+
+    // Check if the password is correct
     const isPasswordMatch = await bcrypt.compare(password, user.password);
     if (!isPasswordMatch) {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
+
+    // Create a session
+    req.session.user = user;
+
     res.status(200).json({ message: '${user.name} successful' });
   } catch (error) {
-    console.error('Error logging in:', error);
+    console.log('Error logging in:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+// logout
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log('Error destroying session:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      res.redirect('/');
+    }
+  });
+});
+
 
 app.get('/students', async (req, res) => {
   try {
+    if (!req.session.user) {
+      // redirect to login
+      return res.redirect('/home.html');
+      //return res.status(401).json({ message: 'Unauthorized' });
+    }
     //Get all students from the database
     var str = await Student.find()
     res.status(200).json( str);
@@ -131,6 +166,24 @@ app.post('/student', async (req, res) => {
   } catch (error) {
     console.error('Error registering student:', error);
     res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// Define route for contact form
+app.post('/contact', async (req, res) => {
+  try {
+      // Retrieve form data from request body
+      const { name, email, phoneNumber, message } = req.body;
+      const emailTo = 'teachertrek2023@gmail.com';
+
+      // Send email notification
+      await sendEmailNotification(emailTo, 'New Message from Contact Form', `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}`);
+
+      // Respond with success message
+      res.status(200).send('Message received successfully');
+  } catch (error) {
+      console.error('Error handling contact form submission:', error);
+      res.status(500).send('Internal server error');
   }
 });
 

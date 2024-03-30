@@ -48,18 +48,7 @@
             <span class="btn active login-btn">Login</span>
             <span class="btn register-btn">Register</span>
         </div>
-        <!-- <form id="login-form" class="login-form active">
-            <h3>Login now</h3>
-            <input type="email" placeholder="Enter your email" class="box" required>
-            <input type="password" placeholder="Enter your password" class="box" required>
-            <div id="login-error"></div>
-            <div class="flex">
-                <input type="checkbox" name="" id="remember-me">
-                <label for="remember-me">Remember me</label>
-                <a href="#">Forgot password</a>
-            </div>
-            <input type="submit" value="login now" class="btn">
-        </form> -->
+     
         <form id="login-form" class="login-form active">
             <h3>Login now</h3>
             <input name="email" type="email" placeholder="Enter your email" class="box" required>
@@ -129,12 +118,13 @@
 
         <div class="row">
    
-            <form action="">
+            <form id="contactForm">
                 <h3>Send us a message</h3>
-                <input type="text" placeholder="name" class="box">
-                <input type="email" placeholder="email" class="box">
-                <input type="number" placeholder="phone" class="box">
-                <textarea name="" class="box" placeholder="message" cols="30" rows="10"></textarea>
+                <input name="name" type="text" placeholder="name" class="box" required>
+                <input name="email" type="email" placeholder="email" class="box" required>
+                <input name="phoneNumber" type="number" placeholder="phone number" class="box" required>
+                <textarea name="message" class="box" placeholder="message" cols="30" rows="10"></textarea>
+                <div id="contact-error"></div>
                 <input type="submit" value="send message" class="btn">
             </form>
 
