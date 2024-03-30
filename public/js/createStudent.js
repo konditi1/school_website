@@ -36,7 +36,7 @@ function logout(){
           }
           if (res.status === 201) {
               document.getElementById('student-error').innerHTML = `${name} registered successfully`;
-              createStudentForm.reset(); // Reset the form
+              createStudentForm.reset(); 
           }
           return res.json(); 
       })

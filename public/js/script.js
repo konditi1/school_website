@@ -40,6 +40,7 @@ document.querySelector('#close-navbar').onclick = () =>{
   let loginBtn = document.querySelector('.account-form .login-btn');
   let registerForm = document.getElementById('register-form');
   let loginForm = document.getElementById('login-form');
+  let contactForm = document.getElementById('contactForm');
   
 
   registerBtn.onclick = () =>{
@@ -133,6 +134,36 @@ document.querySelector('#close-navbar').onclick = () =>{
     document.querySelector('.account-form .register-form').classList.remove('active');
   }
   
+  contactForm.onsubmit = (e) =>{
+    e.preventDefault();
+    let name = e.target.name.value;
+    let email = e.target.email.value;
+    let phoneNumber = e.target.phoneNumber.value;
+    let message = e.target.message.value;
+    fetch('/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "name": name,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "message": message
+        })
+    })
+    .then(res => {
+        if (res?.status==200) {
+          document.getElementById('contact-error').innerHTML = 'Message sent successfully';
+        } else if(res?.status==400){
+          document.getElementById('contact-error').innerHTML = 'Failed to send message';
+        }
+        document.getElementById('contactForm').reset();
+    })
+    .catch(err => {
+        console.log(err);
+    })
+  }
   
 
 // homepage slider
