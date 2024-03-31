@@ -114,6 +114,9 @@ document.querySelector('#close-navbar').onclick = () =>{
         if (res?.status==401) {
           document.getElementById('login-error').innerHTML = 'Invalid email or password';
         } else if(res?.status==200){
+        // save token in local storage
+          localStorage.setItem('token', res?.headers.get('x-auth-token'));
+          // redirect to dashboard
           window.location.href = 'dashboard.html';
         }
     })
