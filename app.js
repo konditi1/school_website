@@ -121,24 +121,17 @@ app.post('/login', async (req, res) => {
   }
 });
 // logout
-app.get('/logout', (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.log('Error destroying session:', err);
-      res.status(500).json({ message: 'Internal server error' });
-    } else {
-      res.redirect('/');
-    }
-  });
+app.delete('/logout', (req, res) => {
+  req.session.destroy((err) => {});
+  res.status(200).json({ message: 'Logout successful' });
 });
 
 
 app.get('/students', async (req, res) => {
   try {
     if (!req.session.user) {
-      // redirect to login
-      return res.redirect('/home.html');
-      //return res.status(401).json({ message: 'Unauthorized' });
+      // redirect to login      
+      return res.status(401).json({ message: 'Unauthorized' });
     }
     //Get all students from the database
     var str = await Student.find()
@@ -184,6 +177,20 @@ app.post('/contact', async (req, res) => {
   } catch (error) {
       console.error('Error handling contact form submission:', error);
       res.status(500).send('Internal server error');
+  }
+});
+
+app.delete('/student/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedStudent = await Student.findByIdAndDelete(id);
+    if (!deletedStudent) {
+      return res.status(404).json({ message: 'Student not found' });
+    }
+    res.status(200).json({ message: 'Student deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting student:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
